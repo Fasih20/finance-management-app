@@ -1,0 +1,22 @@
+{
+    "name": "transactions-service",
+    "private": true,
+    "version": "1.0.0",
+    "scripts": {
+      "dev": "node server.js",
+      "start": "npx drizzle-kit push --config=drizzle.config.js && node server.js",
+      "db:push": "drizzle-kit push --config=drizzle.config.js"
+    },
+    "dependencies": {
+      "cors": "^2.8.5",
+      "dotenv": "^16.4.5",
+      "drizzle-orm": "^0.45.2",
+      "express": "^4.21.1",
+      "pg": "^8.11.5",
+      "redis": "^4.6.13",
+      "drizzle-kit": "^0.31.10"
+    },
+    "devDependencies": {
+      
+    }
+  }
