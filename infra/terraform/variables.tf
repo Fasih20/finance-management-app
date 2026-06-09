@@ -91,3 +91,14 @@ variable "tags" {
   sensitive   = true
 }
 
+variable "clerk_publishable_key" {
+  description = "Clerk Public Key"
+  type        = string
+}
+
+variable "clerk_secret_key" {
+  description = "Clerk Secret Key"
+  type        = string
+  sensitive   = true
+}
+

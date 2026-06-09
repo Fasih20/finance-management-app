@@ -20,6 +20,14 @@ locals {
       {
         name  = "NEXT_PUBLIC_API_URL"
         value = aws_apigatewayv2_stage.main.invoke_url
+      },
+      {
+        name  = "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY"
+        value = var.clerk_publishable_key
+      },
+      {
+        name  = "CLERK_SECRET_KEY"
+        value = var.clerk_secret_key
       }
       # NOTE: Don't forget to add your Clerk keys in your GitHub Actions secrets 
       # so the Next.js container has them during the AWS build process!
