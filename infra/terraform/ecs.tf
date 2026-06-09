@@ -19,7 +19,7 @@ locals {
       },
       {
         name  = "NEXT_PUBLIC_API_URL"
-        value = aws_apigatewayv2_stage.main.invoke_url
+        value = "${aws_apigatewayv2_stage.main.invoke_url}/api"
       },
       {
         name  = "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY"
