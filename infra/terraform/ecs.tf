@@ -1,5 +1,5 @@
 locals {
-  database_url = "postgres://${var.db_username}:${var.db_password}@${aws_db_instance.postgres.address}:5432/${var.db_name}"
+  database_url = "postgresql://${var.db_username}:${var.db_password}@${aws_db_instance.postgres.endpoint}/${var.db_name}?sslmode=require"
   redis_url    = "redis://${aws_elasticache_cluster.redis.cache_nodes[0].address}:6379"
 
   discovery_urls = {
