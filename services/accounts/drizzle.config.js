@@ -8,5 +8,6 @@ export default defineConfig({
   dbCredentials: {
     url: process.env.DATABASE_URL,
   },
+  tablesFilter: ["accounts_service.*"],
   schemaFilter: ["accounts_service"] // <--- The magic fix
 });
