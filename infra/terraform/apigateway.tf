@@ -11,8 +11,8 @@ resource "aws_apigatewayv2_api" "http" {
   protocol_type = "HTTP"
 
   cors_configuration {
-    allow_headers = ["content-type"]
-    allow_methods = ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+    allow_headers = ["content-type", "authorization", "x-requested-with"]
+    allow_methods = ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
     allow_origins = ["*"]
   }
 
@@ -47,7 +47,7 @@ resource "aws_apigatewayv2_route" "proxy" {
 
 resource "aws_apigatewayv2_stage" "main" {
   api_id      = aws_apigatewayv2_api.http.id
-  name        = var.api_gateway_stage
+  name        = "$default"
   auto_deploy = true
 
   default_route_settings {

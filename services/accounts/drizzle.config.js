@@ -1,7 +1,7 @@
-import "dotenv/config";
-import { defineConfig } from "drizzle-kit";
+require("dotenv").config();
+const { defineConfig } = require("drizzle-kit");
 
-export default defineConfig({
+module.exports = defineConfig({
   schema: "./db/schema.js",
   out: "./drizzle",
   dialect: "postgresql",
@@ -9,5 +9,4 @@ export default defineConfig({
     url: process.env.DATABASE_URL,
   },
   tablesFilter: ["accounts_service.*"],
-  schemaFilter: ["accounts_service"] // <--- The magic fix
 });

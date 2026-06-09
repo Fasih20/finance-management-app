@@ -4,4 +4,4 @@ db_password         = "SuperSecretDbPass123!"
 image_tag           = "v1"
 deploy_ecs_services = false
 cloud_map_namespace = "finance.local"
-api_gateway_stage   = "prod"
+api_gateway_stage   = "$default"
