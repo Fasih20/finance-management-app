@@ -1,5 +1,5 @@
 locals {
-  database_url = "postgresql://${var.db_username}:${var.db_password}@${aws_db_instance.postgres.endpoint}/${var.db_name}?sslmode=require"
+  #database_url = var.neon_database_url
   redis_url    = "redis://${aws_elasticache_cluster.redis.cache_nodes[0].address}:6379"
 
   discovery_urls = {
@@ -63,7 +63,7 @@ locals {
       },
       {
         name  = "DATABASE_URL"
-        value = local.database_url
+        value = var.neon_database_url
       },
       {
         name  = "DB_SCHEMA"
@@ -78,7 +78,7 @@ locals {
       },
       {
         name  = "DATABASE_URL"
-        value = local.database_url
+        value = var.neon_database_url
       },
       {
         name  = "DB_SCHEMA"
@@ -112,7 +112,7 @@ locals {
       },
       {
         name  = "DATABASE_URL"
-        value = local.database_url
+        value = var.neon_database_url
       },
       {
         name  = "DB_SCHEMA"

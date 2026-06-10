@@ -40,6 +40,12 @@ variable "db_name" {
   default     = "commerce"
 }
 
+variable "neon_database_url" {
+  description = "The secure connection string for NeonDB"
+  type        = string
+  sensitive   = true
+}
+
 variable "db_username" {
   description = "PostgreSQL admin username used by the demo services."
   type        = string

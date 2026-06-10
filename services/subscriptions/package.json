@@ -3,9 +3,7 @@
     "private": true,
     "version": "1.0.0",
     "scripts": {
-      "dev": "node server.js",
-      "start": "npx drizzle-kit push --config=drizzle.config.js --force & node server.js",
-      "db:push": "drizzle-kit push --config=drizzle.config.js"
+      "start": "node server.js"
     },
     "dependencies": {
       "cors": "^2.8.5",
