@@ -200,7 +200,7 @@ jobs:
 
       - name: Apply Terraform with the new image tag
         run: |
-          terraform apply -auto-approve -lock=false \\
+          terraform apply -auto-approve -lock=false \
             -var "aws_region=${AWS_REGION}" \
             -var "project_name=${PROJECT_NAME}" \
             -var "neon_database_url=${{ secrets.NEON_DATABASE_URL }}" \
