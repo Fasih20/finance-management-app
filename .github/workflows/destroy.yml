@@ -111,7 +111,7 @@ jobs:
 
       - name: Destroy the ECS demo stack
         run: |
-          terraform destroy -auto-approve \
+          terraform destroy -auto-approve -lock=false \
             -var "aws_region=${AWS_REGION}" \
             -var "project_name=${PROJECT_NAME}" \
             -var "neon_database_url=${{ secrets.NEON_DATABASE_URL }}" \
